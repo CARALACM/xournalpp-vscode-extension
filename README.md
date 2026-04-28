@@ -1,12 +1,14 @@
-# Xournal++ XML Editor for VS Code
+# Xournal++ XML Editor for VS Code - Vibe
 
 This extension allows you to open Xournal++ (`.xopp`) files as XML, edit them, and save them back as compressed `.xopp` files.
 
 ## Features
 
-- **Open as XML**: Right-click any `.xopp` file in the explorer and select "Open as XML (Xournal++)".
+- **Open as XML**: Click any `.xopp` file in the explorer it will open as XML.
 - **Live Editing**: Edit the XML content with full syntax highlighting.
 - **Transparent Compression**: When you save (Ctrl+S), the extension automatically compresses the XML back into the original `.xopp` file.
+- **Open in Xournal++**: Right click on any `.xopp` file and select "Open in Xournal++", it will open the file in Xournal++.
+- **Export as PDF**: Right click on any `.xopp` file and select "Export as PDF", it will export and open the file as PDF.
 
 ## How it works
 
