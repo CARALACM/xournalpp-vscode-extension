@@ -1,0 +1,84 @@
+{
+    "name": "xopp-xml-editor",
+    "displayName": "Xournal++ XML Editor",
+    "description": "Edit Xournal++ (.xopp) files as XML directly in VS Code.",
+    "version": "0.0.1",
+    "publisher": "caralacm",
+    "icon": "resources/extension-icon.png",
+    "engines": {
+        "vscode": "^1.75.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onFileSystem:xopp-xml",
+        "onCustomEditor:xopp-xml-editor.default"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "xopp-xml-editor.openInXopp",
+                "title": "Open in Xournal++"
+            },
+            {
+                "command": "xopp-xml-editor.exportAsPdf",
+                "title": "Export as PDF (Xournal++)"
+            }
+        ],
+        "menus": {
+            "explorer/context": [
+                {
+                    "command": "xopp-xml-editor.openInXopp",
+                    "when": "resourceExtname == .xopp",
+                    "group": "navigation@1"
+                },
+                {
+                    "command": "xopp-xml-editor.exportAsPdf",
+                    "when": "resourceExtname == .xopp",
+                    "group": "navigation@2"
+                }
+            ]
+        },
+        "languages": [
+            {
+                "id": "xopp",
+                "extensions": [".xopp"],
+                "icon": {
+                    "light": "./resources/xopp-icon.svg",
+                    "dark": "./resources/xopp-icon.svg"
+                }
+            }
+        ],
+        "customEditors": [
+            {
+                "viewType": "xopp-xml-editor.default",
+                "displayName": "Xournal++ XML Editor",
+                "selector": [
+                    {
+                        "filenamePattern": "*.xopp"
+                    }
+                ],
+                "priority": "default"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "pretest": "npm run compile && npm run lint",
+        "lint": "eslint src --ext ts",
+        "test": "node ./out/test/runTest.js"
+    },
+    "devDependencies": {
+        "@types/vscode": "^1.75.0",
+        "@types/node": "16.x",
+        "typescript": "^4.9.5",
+        "eslint": "^8.34.0",
+        "@typescript-eslint/eslint-plugin": "^5.52.0",
+        "@typescript-eslint/parser": "^5.52.0"
+    },
+    "dependencies": {}
+}
