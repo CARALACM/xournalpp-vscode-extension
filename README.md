@@ -1,4 +1,4 @@
-# Xournal++ XML Editor for VS Code - Vibe
+# Xournal++ XML Editor for VS Code - Vibe Project
 
 This extension allows you to open Xournal++ (`.xopp`) files as XML, edit them, and save them back as compressed `.xopp` files.
 
